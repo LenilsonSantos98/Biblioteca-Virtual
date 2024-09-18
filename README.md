@@ -28,3 +28,15 @@ A camada de implementação de serviço (ServiceImpl) é responsável por execut
 Criar Livros: Antes de salvar um novo livro, verifica se o ISBN já está cadastrado no banco de dados, evitando duplicidade.
 Buscar por ID: Retorna um livro com base no ID, lançando uma exceção se o livro não for encontrado.
 Essa camada abstrai a complexidade do acesso ao banco de dados e mantém a lógica de negócios centralizada.
+
+<h2>Controller</h2>
+
+Buscar Livro por ID:
+
+Método: findById(@PathVariable Long id)
+Descrição: Recebe uma requisição GET para buscar um livro específico pelo seu ID. Utiliza o serviço LivroService para obter o livro e retorna uma resposta HTTP 200 (OK) com o livro encontrado.
+Criar Novo Livro:
+
+Método: create(@RequestBody Livro livroToCreate)
+Descrição: Recebe uma requisição POST para criar um novo livro com base nos dados fornecidos no corpo da requisição. Utiliza o serviço LivroService para salvar o novo livro e retorna uma resposta HTTP 201 (Created) com a localização do novo recurso, além dos dados do livro criado.
+Essas operações são implementadas utilizando anotações do Spring para definir as rotas e tratar as requisições HTTP.
