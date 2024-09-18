@@ -14,3 +14,6 @@ Criando uma Biblioteca com SpringBoot/java
  - PostgreSQL Driver - Para conctar ao PostgreSQL.
  - Spring Boot DevTools - para facilitar o desenvolvimento.
  </p>
+
+ <h2>Criando a entidade Livro</h2>
+A classe Livro, representa a entidade de um livro no sistema de uma livraria. A classe é mapeada para a tabela `tb_livro` no banco de dados através da anotação @Entity. Cada livro possui vários atributos, incluindo id (identificador único), titulo, autor, isbn, dataPublicacao, preco, estoque, e uma sinopse. Os atributos são armazenados no banco de dados com validações de não nulidade e alguns possuem tipos específicos, como BigDecimal para o preço e LocalDate para a data de publicação. A classe também inclui construtores, getters e setters para acessar e modificar os valores dos atributos.
