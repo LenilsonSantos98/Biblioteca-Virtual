@@ -20,3 +20,11 @@ A classe Livro, representa a entidade de um livro no sistema de uma livraria. A 
 
 <h2>Repositorio</h2>
 A interface LivroRepository, que é um repositório responsável por realizar operações de banco de dados para a entidade Livro. Ele estende a interface JpaRepository, fornecendo métodos padrão para operações como salvar, atualizar, deletar e buscar livros. Além disso, inclui um método personalizado existsByIsbn(String isbn), que verifica se já existe um livro cadastrado com um determinado ISBN no banco de dados. A anotação @Repository indica que é um componente de persistência Spring.
+
+<h2>Implementação</h2>
+
+A camada de implementação de serviço (ServiceImpl) é responsável por executar a lógica de negócios da aplicação, interagindo diretamente com o repositório de dados. No caso da livraria, a implementação do serviço de Livro define métodos para:
+
+Criar Livros: Antes de salvar um novo livro, verifica se o ISBN já está cadastrado no banco de dados, evitando duplicidade.
+Buscar por ID: Retorna um livro com base no ID, lançando uma exceção se o livro não for encontrado.
+Essa camada abstrai a complexidade do acesso ao banco de dados e mantém a lógica de negócios centralizada.
