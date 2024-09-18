@@ -40,3 +40,13 @@ Criar Novo Livro:
 Método: create(@RequestBody Livro livroToCreate)
 Descrição: Recebe uma requisição POST para criar um novo livro com base nos dados fornecidos no corpo da requisição. Utiliza o serviço LivroService para salvar o novo livro e retorna uma resposta HTTP 201 (Created) com a localização do novo recurso, além dos dados do livro criado.
 Essas operações são implementadas utilizando anotações do Spring para definir as rotas e tratar as requisições HTTP.
+
+<h2>Conectando ao PostGreSQL</h2>
+Configuração do application.properties:
+ 
+ 
+ ![alt text](image.png)
+
+ Tabela Criada no Postgre:
+
+ ![alt text](image-1.png)
