@@ -3,8 +3,6 @@ package com.livraria.livraria_api.controller;
 import java.net.URI;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +22,11 @@ public class LivroController {
         this.livroService = livroService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Livro> findById(@PathVariable Long id){
-        var livro =livroService.findById(id);
-        return ResponseEntity.ok(livro);
-    }
+    // @GetMapping("/{id}")
+    // public ResponseEntity<Livro> findById(@PathVariable Long id){
+    //     var livro =livroService.findById(id);
+    //     return ResponseEntity.ok(livro);
+    // }
 
     @PostMapping
     public ResponseEntity<Livro> create(@RequestBody Livro livroToCreate) {

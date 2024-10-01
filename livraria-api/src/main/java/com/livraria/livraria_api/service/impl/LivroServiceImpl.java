@@ -1,6 +1,6 @@
 package com.livraria.livraria_api.service.impl;
 
-import java.util.NoSuchElementException;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -9,11 +9,12 @@ import com.livraria.livraria_api.domain.repository.LivroRepository;
 import com.livraria.livraria_api.service.LivroService;
 
 @Service
-public class LivroServiceImpl implements LivroService {
+public class LivroServiceImpl extends BaseServiceImpl<Livro, Long> implements LivroService {
 
     private final LivroRepository livroRepository;
 
     public LivroServiceImpl(LivroRepository livroRepository){
+        super(livroRepository);
         this.livroRepository = livroRepository;
     }
 
@@ -26,7 +27,9 @@ public class LivroServiceImpl implements LivroService {
     }
 
     @Override
-    public Livro findById(Long id) {
-        return livroRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    public List<Livro> findByTitulo(String titulo) {
+        return livroRepository.findByTituloContaining(titulo);
     }
+
+    
 }
